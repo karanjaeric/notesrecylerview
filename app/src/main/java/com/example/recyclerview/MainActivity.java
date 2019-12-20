@@ -1,6 +1,7 @@
 package com.example.recyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected void loadNotes(){
 
         RecyclerView notesRecyclerView=findViewById(R.id.list_notes);
-        LinearLayoutManager notesLayoutManager=new LinearLayoutManager(this);
+//        LinearLayoutManager notesLayoutManager=new LinearLayoutManager(this);
+        GridLayoutManager notesLayoutManager=new GridLayoutManager(this,2);
         notesRecyclerView.setLayoutManager(notesLayoutManager);
         List<NotesInfo> notes=this.getNotes();
         adapter = new NotesRecyclerAdapter(this,notes);
